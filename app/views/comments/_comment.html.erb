@@ -1,0 +1,14 @@
+<p>
+  <b>评论者:</b>
+  <%= comment.commenter %>
+</p>
+ 
+<p>
+  <b>TA的评论:</b>
+  <%= comment.body %>
+</p>
+<p>
+  <%= link_to '删除该评论', [comment.post, comment],
+               :confirm => '确定要删除这条评论吗?',
+               :method => :delete %>
+</p>

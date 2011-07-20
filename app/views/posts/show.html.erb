@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>名字:</b>
+  <%= @post.name %>
+</p>
+
+<p>
+  <b>标题:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>博文内容:</b>
+  <%= @post.content %>
+</p>
+<h2>相关评论</h2>
+<%= render :partial => "comments/comment",
+           :collection => @post.comments %>
+
+<h2>我要评论:</h2>
+<%= render "comments/form" %>
+<br/>
+<%= link_to '编辑', edit_post_path(@post) %> |
+<%= link_to '返回', posts_path %>

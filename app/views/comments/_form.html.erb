@@ -1,0 +1,13 @@
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <div class="field">
+    评论者：<br />
+    <%= f.text_field :commenter %>
+  </div>
+  <div class="field">
+    TA的评论：<br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交"%>
+  </div>
+<% end %>

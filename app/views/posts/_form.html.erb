@@ -1,0 +1,29 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    名字：<br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    标题：<br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    博客内容：<br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit "保存"%>
+  </div>
+<% end %>

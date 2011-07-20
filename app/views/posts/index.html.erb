@@ -1,0 +1,27 @@
+<h1>博客列表</h1>
+
+<table>
+  <tr>
+    <th>名字</th>
+    <th>标题</th>
+    <th>内容</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.name %></td>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= link_to '查看全部内容', post %></td>
+    <td><%= link_to '编辑', edit_post_path(post) %></td>
+    <td><%= link_to '删除', post, :confirm => '确定要删除这篇博客吗?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '发表新博文', new_post_path %>
